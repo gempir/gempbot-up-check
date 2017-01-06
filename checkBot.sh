@@ -2,6 +2,8 @@
 
 if [ $? -ne 0 ]; then
 	echo "$(date) restarting gempbot" >> /var/log/gempbot-up-check.log
-	sudo systemctl gempbot.service restart
+	sudo systemctl restart gempbot.service
+else
+	echo "$(date) gempbot is fine"
 fi
 
